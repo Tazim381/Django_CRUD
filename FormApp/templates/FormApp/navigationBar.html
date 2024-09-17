@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation Bar</title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'FormApp/css/navigation.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="{% url 'create_student' %}">Home</a></li>
+            <li><a href="{% url 'showAllStudents' %}">Show All Students</a></li>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

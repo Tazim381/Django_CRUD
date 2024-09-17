@@ -1,0 +1,54 @@
+ table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 10px auto;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* Alternate row colors: even rows white, odd rows gray */
+        tbody tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        /* Header styling */
+        thead {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Button styling */
+        button {
+            padding: 5px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Update button styling */
+        .update-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+
+        /* Delete button styling */
+        .delete-btn {
+            background-color: #900202;
+            color: white;
+            border: none;
+        }
+
+        /* Hover effect for buttons */
+        button:hover {
+            opacity: 0.8;
+        }
+ a{
+     text-decoration: none;
+ }

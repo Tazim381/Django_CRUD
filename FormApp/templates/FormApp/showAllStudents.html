@@ -1,0 +1,41 @@
+{% extends 'FormApp/navigationBar.html' %}
+
+<!DOCTYPE html>
+{% block content %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show All Student</title>
+      {% load static %}
+     <link rel="stylesheet" href="{% static 'FormApp/css/allStudentPage.css' %}">
+</head>
+<body>
+  <table>
+     <thead>
+          <td><b>Name</b></td>
+          <td><b>Roll</b></td>
+          <td><b>Email</b></td>
+          <td><b>Deaprtment</b></td>
+          <td><b>Action</b></td>
+     </thead>
+ {% for student in students %}
+<tbody>
+<td> {{student.name}}</td>
+<td> {{student.roll}}</td>
+<td> {{student.email}}</td>
+<td>{{student.department}}</td>
+<td>
+    <a href="{% url 'updateStudent' student.id %}">
+    <button style="background: aqua ; border: none" type="button">Update</button>
+    </a>
+    <a href="{% url 'deleteStudent' student.id %}">
+    <button style="background: #900202; border: none; color: white">Delete</button>
+    </a>
+</td>
+</tbody>
+{% endfor %}
+  </table>
+</body>
+</html>
+{% endblock %}
