@@ -30,14 +30,14 @@ def updateStudent(request, student_id):
     student = get_object_or_404(Student, id=student_id)
 
     if request.method == "POST":
-        form = StudentUpdateForm(request.POST, instance=student)
+        form = StudentModelForm(request.POST, instance=student)
         if form.is_valid():
             form.save()
             return redirect("showAllStudents")
         else:
             print("Form errors:", form.errors)  # Print the errors here
     else:
-        form  = StudentUpdateForm(instance=student)  # Pass the instance for initial values
+        form  = StudentModelForm(instance=student)  # Pass the instance for initial values
 
     context = {
         "form":form,
