@@ -32,13 +32,26 @@
     <a href="{% url 'updateStudent' student.id %}">
     <button style="background: aqua ; border: none" type="button">Update</button>
     </a>
-    <a href="{% url 'deleteStudent' student.id %}">
+    <a href="{% url 'deleteStudent' student.id %}" onclick="return confirm('Are you sure you want to delete this student?');">
     <button style="background: #900202; border: none; color: white">Delete</button>
-    </a>
+</a>
 </td>
 </tbody>
 {% endfor %}
   </table>
+  <!--
+  //CHECK THE ID FOR ALL STUDENT TO PERFORM DELETE OPERATION
+  -->
+  <script>
+        // Log each student's ID to the console
+        const students = [
+            {% for student in students %}
+                {{ student.id }},
+            {% endfor %}
+        ];
+
+        console.log("Student IDs:", students);
+    </script>
 </body>
 </html>
 {% endblock %}

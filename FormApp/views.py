@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .forms import StudentModelForm, StudentUpdateForm
 from .models import Student
 from django.contrib import  messages
+
 def create_student(request):
     if request.method == "POST":
         form = StudentModelForm(request.POST)

@@ -6,5 +6,4 @@ urlpatterns = [
     path('showAllStudents',views.showAllStudents, name='showAllStudents'),
     path('updateStudent/<int:student_id>/', views.updateStudent, name='updateStudent'),
     path('deleteStudent/<int:student_id>/', views.deleteStudent,name = 'deleteStudent')
-
 ]
