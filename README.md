@@ -20,3 +20,26 @@ def create_update_signal(sender,instance,created,**kwargs):
  def ready(self):  
         import FormApp.signals   
 ```
+
+
+# How to add custom Validator into Models
+## Here is the example code 
+```
+from django.db import models
+from django.core.exceptions import ValidationError
+
+def validate_roll(value):
+    if not value.isdigit():
+        raise ValidationError('Roll must contain only digits')
+
+
+class Student(models.Model):
+    name = models.CharField(max_length=100)
+    roll = models.CharField(max_length=20, null=True, validators=[validate_roll])
+    email = models.EmailField(max_length=100, null=True)
+    department = models.CharField(max_length=20, null=True)
+
+    def __str__(self):
+        return self.name
+
+```
