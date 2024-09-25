@@ -16,6 +16,7 @@ def create_student(request):
             try:
                 form.save()
                 messages.success(request,"Student Created Successfully")
+                form = StudentModelForm()
             except:
                 pass
         else:
