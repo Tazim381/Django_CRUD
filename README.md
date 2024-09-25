@@ -1,3 +1,9 @@
+# This application contains
+## CRUD
+## Custom Validation
+## Custom Middleware
+## Django Signal
+## Emailing System 
 
 
 # How to add singnal:  
