@@ -1,7 +1,7 @@
 
 
-#How Signal Added:  
-1. First Create a signals.py file   
+# How Signal Added:  
+## 1. First Create a signals.py file   
 Then added this similar things for your project  
 
 from . models import Student  
@@ -15,6 +15,6 @@ def create_update_signal(sender,instance,created,**kwargs):
     else:  
     print("Student Updated Signal is Called")  
 
-2. Change apps.py file add ready function to the file   
+## 2. Change apps.py file add ready function to the file   
  def ready(self):  
         import FormApp.signals   
