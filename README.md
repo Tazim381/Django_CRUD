@@ -58,3 +58,21 @@ from django.contrib import  messages
         {{ msg }}
     {% endfor %}
 ```
+
+
+# How send email works  
+## 1. Configure SMTP (change settings.py) file
+```
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER ='tazim@divine-it.net'
+EMAIL_HOST_PASSWORD = 'XXXXXXXXXX'
+```
+
+## 2. Use send_mail() function for sending message:
+```
+from django.core.mail import send_mail
+send_mail(subject, message, settings.EMAIL_HOST_USER, [address])
+```
