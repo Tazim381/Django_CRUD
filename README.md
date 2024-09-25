@@ -43,3 +43,18 @@ class Student(models.Model):
         return self.name
 
 ```
+
+# How messages middleware, message context processor works.  
+## 1. Include messages
+from django.contrib import  messages  
+
+## 2. Write success and error message  
+  messages.success(request,'Email sent successfully')  
+  ages.error(request,'All fields are required')  
+
+## 3. Print message to to UI
+```
+  {% for msg in messages %}
+        {{ msg }}
+    {% endfor %}
+```
