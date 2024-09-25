@@ -6,6 +6,9 @@ from .models import Student
 from django.contrib import  messages
 from django.conf import settings
 
+
+def home(request):
+    return render(request,'FormApp/home.html')
 def create_student(request):
     if request.method == "POST":
         form = StudentModelForm(request.POST)
@@ -50,7 +53,6 @@ def updateStudent(request, student_id):
 
 def deleteStudent(request,student_id):
     student = get_object_or_404(Student, id=student_id)
-    print(student)
     student.delete()
     messages.success(request,"Student Deleted")
     return redirect("showAllStudents")
