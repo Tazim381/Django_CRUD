@@ -1,6 +1,6 @@
 
 
-# How Signal Added:  
+# How to add singnal:  
 ## 1. First Create a signals.py file   
 Then added this similar things for your project  
 
