@@ -1,0 +1,92 @@
+/* General styles for the login page body */
+.login-body {
+    font-family: 'Arial', sans-serif; /* Use a clean font */
+    background-color: #f0f4f8; /* Soft light background */
+    margin: 0;
+    padding: 0; /* Remove padding for centering */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+
+}
+
+/* Header styles */
+.login-body h1 {
+    color: #333; /* Dark grey color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 2.5em; /* Larger font size */
+    text-align: center; /* Center the heading */
+}
+
+/* Form container styles */
+.login-body form {
+    background-color: #ffffff; /* White background for the form */
+    padding: 30px; /* Padding inside the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 400px; /* Limit the form width */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in total width */
+}
+
+/* Input field styles */
+.login-body form input[type="text"],
+.login-body form input[type="password"],
+.login-body form input[type="email"] {
+    width: 100%; /* Full width for input fields */
+    padding: 12px; /* Padding inside input fields */
+    margin-bottom: 15px; /* Space below each field */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Slightly rounded corners */
+    font-size: 14px; /* Font size for input text */
+    color: #333; /* Dark grey text color */
+    transition: border-color 0.3s ease; /* Smooth transition on focus */
+}
+
+/* Input focus styles */
+.login-body form input:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Submit button styles */
+.login-body form button[type="submit"] {
+    width: 100%; /* Full width for the button */
+    padding: 12px; /* Padding for the button */
+    background-color: #007bff; /* Primary button color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    color: white; /* White text color */
+    font-size: 16px; /* Font size for button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Button hover styles */
+.login-body form button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Link styles */
+.login-body p {
+    text-align: center; /* Center align paragraph */
+    margin-top: 15px; /* Space above the paragraph */
+}
+
+.login-body p a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold link text */
+}
+
+.login-body p a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Message styles */
+.login-body .messages {
+    margin-bottom: 15px; /* Space below messages */
+    color: #ff0000; /* Red color for error messages */
+    text-align: center; /* Center align messages */
+}

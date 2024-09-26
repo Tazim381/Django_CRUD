@@ -1,6 +1,6 @@
 from django.db import models
 from django.core.exceptions import ValidationError
-
+from  django.contrib.auth.models import User
 
 # Create your models here.
 def validate_roll(value):
@@ -17,3 +17,10 @@ class Student(models.Model):
     def __str__(self):
         return self.name
 
+
+class Profile(models.Model):
+    user =models.OneToOneField(User,on_delete=models.CASCADE)
+    designation = models.CharField(max_length=50)
+    phone = models.CharField(max_length=50)
+    def __str__(self):
+        return f"{self.user.username}'s profile"

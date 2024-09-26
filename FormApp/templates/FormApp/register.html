@@ -1,0 +1,16 @@
+{% extends 'FormApp/navigationBar.html' %}
+{% block content %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'FormApp/css/registrationFrom.css' %}">
+
+    <div class="register">
+        <h1>Register</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ user_form }}
+            {{ profile_form }}
+            <button type="submit">Register</button>
+        </form>
+        <p>Already Have Account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+{% endblock %}

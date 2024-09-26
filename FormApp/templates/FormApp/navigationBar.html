@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <title>Navigation Bar</title>
     {% load static %}
-  <link rel="stylesheet" href="{% static 'FormApp/css/navigation.css' %}">
+    <link rel="stylesheet" href="{% static 'FormApp/css/navigation.css' %}">
+    <!-- Optional: Include Bootstrap CSS for pre-designed components -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <nav class="navbar">
@@ -12,11 +14,44 @@
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'create_student' %}">Create Student</a></li>
             <li><a href="{% url 'showAllStudents' %}">Show All Students</a></li>
-            <li><a href="{% url 'send_email' %}">Send Mail </a></li>
-
+            <li><a href="{% url 'send_email' %}">Send Mail</a></li>
+            {% if request.user.is_authenticated %}
+                <!-- Logout button triggers modal -->
+                <li><a href="#" data-toggle="modal" data-target="#logoutModal">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
         </ul>
     </nav>
+
     {% block content %}
     {% endblock %}
+
+    <!-- Logout Confirmation Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logoutModalLabel">Logout Confirmation</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Are you sure you want to logout?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            <!-- The actual logout link -->
+            <a href="{% url 'logout' %}" class="btn btn-primary">Yes, Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional: Include Bootstrap JS for modal functionality -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{% static 'FormApp/css/send_email.css' %}"/>
     <title>Mail App</title>
 </head>
-<body>
+<div class="mail-body">
     <div>
         <h1>Django Mail App</h1>
 
@@ -29,7 +29,7 @@
  {% for msg in messages %}
         {{ msg }}
         {% endfor %}
-</body>
+</div>
 </html>
 
 {% endblock %}

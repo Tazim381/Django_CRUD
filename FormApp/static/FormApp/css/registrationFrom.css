@@ -1,0 +1,92 @@
+/* General styles for the registration page */
+.register {
+    font-family: 'Arial', sans-serif; /* Clean font for readability */
+    background-color: #f4f4f4; /* Light grey background for the page */
+    margin: 0;
+    padding: 40px; /* Padding around the content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Header styles */
+.register h1 {
+    color: #333; /* Dark grey for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 2.5em; /* Larger font size */
+    text-align: center; /* Center the heading */
+}
+
+/* Form container styles */
+.register form {
+    background-color: #ffffff; /* White background for the form */
+    padding: 30px; /* Padding inside the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 400px; /* Limit the form width */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in total width */
+}
+
+/* Input field styles */
+.register form input[type="text"],
+.register form input[type="password"],
+.register form input[type="email"],
+.register form input[type="tel"] { /* Added telephone input */
+    width: 100%; /* Full width for input fields */
+    padding: 12px; /* Padding inside input fields */
+    margin-bottom: 15px; /* Space below each field */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Slightly rounded corners */
+    font-size: 14px; /* Font size for input text */
+    color: #333; /* Dark grey text color */
+    transition: border-color 0.3s ease; /* Smooth transition on focus */
+}
+
+/* Input focus styles */
+.register form input:focus {
+    border-color: #007bff; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Submit button styles */
+.register form button[type="submit"] {
+    width: 100%; /* Full width for the button */
+    padding: 12px; /* Padding for the button */
+    background-color: #007bff; /* Primary button color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    color: white; /* White text color */
+    font-size: 16px; /* Font size for button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Button hover styles */
+.register form button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Link styles */
+.register p {
+    text-align: center; /* Center align paragraph */
+    margin-top: 15px; /* Space above the paragraph */
+}
+
+.register p a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold link text */
+}
+
+.register p a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Message styles (if you plan to add any) */
+.register .messages {
+    margin-bottom: 15px; /* Space below messages */
+    color: #ff0000; /* Red color for error messages */
+    text-align: center; /* Center align messages */
+}
