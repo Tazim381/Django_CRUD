@@ -2,6 +2,8 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
+
+from .decorators import admin_only
 from .forms import StudentModelForm, StudentUpdateForm,UserForm,UserProfileForm,LoginForm
 from .models import Student
 from django.contrib import  messages
@@ -57,6 +59,7 @@ def updateStudent(request, student_id):
     }
     return render(request, 'FormApp/updateStudent.html',context)
 @login_required
+@admin_only
 def deleteStudent(request,student_id):
     student = get_object_or_404(Student, id=student_id)
     student.delete()
@@ -102,10 +105,7 @@ def login(request):
         if login_form.is_valid():
             username = login_form.cleaned_data['username']
             password = login_form.cleaned_data['password']
-            print(username)
-
             user = authenticate(request,username= username, password= password)
-            print(user)
             if user:
                 auth_login(request, user)
                 return redirect('home')
